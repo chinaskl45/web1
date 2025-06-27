@@ -1,0 +1,138 @@
+<?php
+/**
+ * Funciones del tema Grupos de Telegram
+ */
+
+// Evitar acceso directo
+if (!defined('ABSPATH')) {
+    exit;
+}
+
+/**
+ * Configuración inicial del tema
+ */
+function grupos_telegram_setup() {
+    // Soporte para imágenes destacadas
+    add_theme_support('post-thumbnails');
+    
+    // Soporte para título dinámico
+    add_theme_support('title-tag');
+    
+    // Soporte para logo personalizado
+    add_theme_support('custom-logo', array(
+        'height'      => 100,
+        'width'       => 300,
+        'flex-height' => true,
+        'flex-width'  => true,
+    ));
+    
+    // Soporte para HTML5
+    add_theme_support('html5', array(
+        'search-form',
+        'comment-form',
+        'comment-list',
+        'gallery',
+        'caption',
+    ));
+    
+    // Registro de menús
+    register_nav_menus(array(
+        'primary' => esc_html__('Menú Principal', 'grupos-telegram'),
+        'footer'  => esc_html__('Menú Footer', 'grupos-telegram'),
+    ));
+}
+add_action('after_setup_theme', 'grupos_telegram_setup');
+
+/**
+ * Enqueue de estilos y scripts
+ */
+function grupos_telegram_scripts() {
+    // Estilo principal
+    wp_enqueue_style('grupos-telegram-style', get_stylesheet_uri(), array(), '1.0.0');
+    
+    // Font Awesome
+    wp_enqueue_style('font-awesome', 'https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@6.4.0/css/all.min.css', array(), '6.4.0');
+    
+    // Google Fonts
+    wp_enqueue_style('google-fonts', 'https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap', array(), null);
+    
+    // JavaScript
+    wp_enqueue_script('grupos-telegram-script', get_template_directory_uri() . '/assets/js/main.js', array('jquery'), '1.0.0', true);
+}
+add_action('wp_enqueue_scripts', 'grupos_telegram_scripts');
+
+/**
+ * Custom Post Type: Grupos
+ */
+function crear_post_type_grupos() {
+    $labels = array(
+        'name'                  => _x('Grupos', 'Post Type General Name', 'grupos-telegram'),
+        'singular_name'         => _x('Grupo', 'Post Type Singular Name', 'grupos-telegram'),
+        'menu_name'             => __('Grupos de Telegram', 'grupos-telegram'),
+        'add_new_item'          => __('Añadir Nuevo Grupo', 'grupos-telegram'),
+        'edit_item'             => __('Editar Grupo', 'grupos-telegram'),
+    );
+    
+    $args = array(
+        'label'                 => __('Grupo', 'grupos-telegram'),
+        'labels'                => $labels,
+        'supports'              => array('title', 'editor', 'thumbnail', 'excerpt'),
+        'public'                => true,
+        'show_ui'               => true,
+        'show_in_menu'          => true,
+        'menu_position'         => 20,
+        'menu_icon'             => 'dashicons-groups',
+        'show_in_admin_bar'     => true,
+        'show_in_nav_menus'     => true,
+        'can_export'            => true,
+        'has_archive'           => true,
+        'exclude_from_search'   => false,
+        'publicly_queryable'    => true,
+        'rewrite'               => array('slug' => 'grupos'),
+        'show_in_rest'          => true,
+    );
+    
+    register_post_type('grupo', $args);
+}
+add_action('init', 'crear_post_type_grupos', 0);
+
+/**
+ * Taxonomía: Categorías de Grupos
+ */
+function crear_taxonomia_categorias_grupos() {
+    $labels = array(
+        'name'              => _x('Categorías de Grupos', 'taxonomy general name', 'grupos-telegram'),
+        'singular_name'     => _x('Categoría de Grupo', 'taxonomy singular name', 'grupos-telegram'),
+        'search_items'      => __('Buscar Categorías', 'grupos-telegram'),
+        'add_new_item'      => __('Añadir Nueva Categoría', 'grupos-telegram'),
+    );
+    
+    $args = array(
+        'hierarchical'      => true,
+        'labels'            => $labels,
+        'show_ui'           => true,
+        'show_admin_column' => true,
+        'query_var'         => true,
+        'rewrite'           => array('slug' => 'categoria-grupo'),
+        'show_in_rest'      => true,
+    );
+    
+    register_taxonomy('categoria_grupo', array('grupo'), $args);
+}
+add_action('init', 'crear_taxonomia_categorias_grupos', 0);
+
+/**
+ * Widgets Areas
+ */
+function grupos_telegram_widgets_init() {
+    register_sidebar(array(
+        'name'          => esc_html__('Sidebar Principal', 'grupos-telegram'),
+        'id'            => 'sidebar-1',
+        'description'   => esc_html__('Añade widgets aquí.', 'grupos-telegram'),
+        'before_widget' => '<section id="%1$s" class="widget %2$s">',
+        'after_widget'  => '</section>',
+        'before_title'  => '<h2 class="widget-title">',
+        'after_title'   => '</h2>',
+    ));
+}
+add_action('widgets_init', 'grupos_telegram_widgets_init');

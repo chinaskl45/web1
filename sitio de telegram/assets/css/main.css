@@ -1,0 +1,606 @@
+/**
+ * main.css - Grupos Telegram WordPress Theme
+ * Estilos principales adicionales y utilidades
+ * Versión: 1.0.0
+ */
+
+/* ==========================================================================
+   VARIABLES CSS EXTENDIDAS
+   ========================================================================== */
+
+:root {
+  /* Colores extendidos para categorías */
+  --gaming-color: #9c27b0;
+  --gaming-light: #e1bee7;
+  --musica-color: #f44336;
+  --musica-light: #ffcdd2;
+  --tecnologia-color: #2196f3;
+  --tecnologia-light: #bbdefb;
+  --deportes-color: #4caf50;
+  --deportes-light: #c8e6c9;
+  --educacion-color: #ff9800;
+  --educacion-light: #ffe0b2;
+  --entretenimiento-color: #e91e63;
+  --entretenimiento-light: #f8bbd9;
+  
+  /* Estados y feedback */
+  --success-color: #4caf50;
+  --warning-color: #ff9800;
+  --error-color: #f44336;
+  --info-color: #2196f3;
+  
+  /* Sombras y efectos */
+  --shadow-light: 0 2px 8px rgba(0, 136, 204, 0.1);
+  --shadow-medium: 0 4px 20px rgba(0, 136, 204, 0.15);
+  --shadow-heavy: 0 8px 32px rgba(0, 136, 204, 0.25);
+  
+  /* Transiciones */
+  --transition-fast: 0.15s ease;
+  --transition-normal: 0.3s ease;
+  --transition-slow: 0.5s ease;
+  
+  /* Z-index layers */
+  --z-dropdown: 1000;
+  --z-sticky: 1020;
+  --z-fixed: 1030;
+  --z-modal: 1040;
+  --z-popover: 1050;
+  --z-tooltip: 1060;
+}
+
+/* ==========================================================================
+   UTILIDADES DE LAYOUT
+   ========================================================================== */
+
+/* Contenedores flexibles */
+.flex-center {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.flex-between {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.flex-start {
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+}
+
+.flex-column {
+  display: flex;
+  flex-direction: column;
+}
+
+.flex-wrap {
+  flex-wrap: wrap;
+}
+
+/* Espaciado */
+.mb-0 { margin-bottom: 0; }
+.mb-1 { margin-bottom: 0.25rem; }
+.mb-2 { margin-bottom: 0.5rem; }
+.mb-3 { margin-bottom: 1rem; }
+.mb-4 { margin-bottom: 1.5rem; }
+.mb-5 { margin-bottom: 2rem; }
+.mb-6 { margin-bottom: 3rem; }
+
+.mt-0 { margin-top: 0; }
+.mt-1 { margin-top: 0.25rem; }
+.mt-2 { margin-top: 0.5rem; }
+.mt-3 { margin-top: 1rem; }
+.mt-4 { margin-top: 1.5rem; }
+.mt-5 { margin-top: 2rem; }
+.mt-6 { margin-top: 3rem; }
+
+.p-0 { padding: 0; }
+.p-1 { padding: 0.25rem; }
+.p-2 { padding: 0.5rem; }
+.p-3 { padding: 1rem; }
+.p-4 { padding: 1.5rem; }
+.p-5 { padding: 2rem; }
+.p-6 { padding: 3rem; }
+
+/* ==========================================================================
+   ANIMACIONES Y TRANSICIONES
+   ========================================================================== */
+
+/* Animaciones de entrada */
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes slideInLeft {
+  from {
+    opacity: 0;
+    transform: translateX(-30px);
+  }
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+@keyframes slideInRight {
+  from {
+    opacity: 0;
+    transform: translateX(30px);
+  }
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+@keyframes bounce {
+  0%, 20%, 53%, 80%, 100% {
+    transform: translate3d(0,0,0);
+  }
+  40%, 43% {
+    transform: translate3d(0, -30px, 0);
+  }
+  70% {
+    transform: translate3d(0, -15px, 0);
+  }
+  90% {
+    transform: translate3d(0, -4px, 0);
+  }
+}
+
+@keyframes pulse {
+  0% {
+    transform: scale(1);
+  }
+  50% {
+    transform: scale(1.05);
+  }
+  100% {
+    transform: scale(1);
+  }
+}
+
+@keyframes shake {
+  0%, 100% {
+    transform: translateX(0);
+  }
+  10%, 30%, 50%, 70%, 90% {
+    transform: translateX(-10px);
+  }
+  20%, 40%, 60%, 80% {
+    transform: translateX(10px);
+  }
+}
+
+/* Clases de animación */
+.animate-fade-in {
+  animation: fadeIn 0.6s ease-out;
+}
+
+.animate-slide-in-left {
+  animation: slideInLeft 0.6s ease-out;
+}
+
+.animate-slide-in-right {
+  animation: slideInRight 0.6s ease-out;
+}
+
+.animate-bounce {
+  animation: bounce 2s infinite;
+}
+
+.animate-pulse {
+  animation: pulse 2s infinite;
+}
+
+.animate-shake {
+  animation: shake 0.6s ease-in-out;
+}
+
+/* Delays para animaciones escalonadas */
+.animate-delay-1 { animation-delay: 0.1s; }
+.animate-delay-2 { animation-delay: 0.2s; }
+.animate-delay-3 { animation-delay: 0.3s; }
+.animate-delay-4 { animation-delay: 0.4s; }
+.animate-delay-5 { animation-delay: 0.5s; }
+
+/* ==========================================================================
+   EFECTOS HOVER Y ESTADOS
+   ========================================================================== */
+
+/* Efectos de escala */
+.hover-scale {
+  transition: transform var(--transition-normal);
+}
+
+.hover-scale:hover {
+  transform: scale(1.05);
+}
+
+.hover-scale-sm {
+  transition: transform var(--transition-fast);
+}
+
+.hover-scale-sm:hover {
+  transform: scale(1.02);
+}
+
+.hover-scale-lg {
+  transition: transform var(--transition-normal);
+}
+
+.hover-scale-lg:hover {
+  transform: scale(1.1);
+}
+
+/* Efectos de elevación */
+.hover-lift {
+  transition: transform var(--transition-normal), box-shadow var(--transition-normal);
+}
+
+.hover-lift:hover {
+  transform: translateY(-5px);
+  box-shadow: var(--shadow-heavy);
+}
+
+/* Efectos de brillo */
+.hover-glow {
+  transition: box-shadow var(--transition-normal);
+}
+
+.hover-glow:hover {
+  box-shadow: 0 0 20px rgba(var(--telegram-blue-rgb), 0.4);
+}
+
+/* Estados de carga */
+.loading {
+  position: relative;
+  overflow: hidden;
+}
+
+.loading::after {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: -100%;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(90deg, transparent, rgba(255,255,255,0.4), transparent);
+  animation: loading 1.5s infinite;
+}
+
+@keyframes loading {
+  0% {
+    left: -100%;
+  }
+  100% {
+    left: 100%;
+  }
+}
+
+/* ==========================================================================
+   TIPOGRAFÍA AVANZADA
+   ========================================================================== */
+
+/* Títulos con efectos */
+.title-gradient {
+  background: var(--telegram-gradient);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  font-weight: 700;
+}
+
+.title-shadow {
+  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
+}
+
+.title-outline {
+  -webkit-text-stroke: 1px var(--telegram-blue);
+  color: transparent;
+}
+
+/* Tamaños de texto extendidos */
+.text-xs { font-size: 0.75rem; }
+.text-sm { font-size: 0.875rem; }
+.text-base { font-size: 1rem; }
+.text-lg { font-size: 1.125rem; }
+.text-xl { font-size: 1.25rem; }
+.text-2xl { font-size: 1.5rem; }
+.text-3xl { font-size: 1.875rem; }
+.text-4xl { font-size: 2.25rem; }
+.text-5xl { font-size: 3rem; }
+
+/* Pesos de fuente */
+.font-thin { font-weight: 100; }
+.font-light { font-weight: 300; }
+.font-normal { font-weight: 400; }
+.font-medium { font-weight: 500; }
+.font-semibold { font-weight: 600; }
+.font-bold { font-weight: 700; }
+.font-extrabold { font-weight: 800; }
+
+/* ==========================================================================
+   COLORES DE CATEGORÍAS
+   ========================================================================== */
+
+/* Gaming */
+.categoria-gaming {
+  --categoria-color: var(--gaming-color);
+  --categoria-light: var(--gaming-light);
+}
+
+.categoria-gaming .categoria-icon {
+  color: var(--gaming-color);
+}
+
+.categoria-gaming .categoria-badge {
+  background: var(--gaming-color);
+  color: white;
+}
+
+/* Música */
+.categoria-musica {
+  --categoria-color: var(--musica-color);
+  --categoria-light: var(--musica-light);
+}
+
+.categoria-musica .categoria-icon {
+  color: var(--musica-color);
+}
+
+.categoria-musica .categoria-badge {
+  background: var(--musica-color);
+  color: white;
+}
+
+/* Tecnología */
+.categoria-tecnologia {
+  --categoria-color: var(--tecnologia-color);
+  --categoria-light: var(--tecnologia-light);
+}
+
+.categoria-tecnologia .categoria-icon {
+  color: var(--tecnologia-color);
+}
+
+.categoria-tecnologia .categoria-badge {
+  background: var(--tecnologia-color);
+  color: white;
+}
+
+/* Deportes */
+.categoria-deportes {
+  --categoria-color: var(--deportes-color);
+  --categoria-light: var(--deportes-light);
+}
+
+.categoria-deportes .categoria-icon {
+  color: var(--deportes-color);
+}
+
+.categoria-deportes .categoria-badge {
+  background: var(--deportes-color);
+  color: white;
+}
+
+/* Educación */
+.categoria-educacion {
+  --categoria-color: var(--educacion-color);
+  --categoria-light: var(--educacion-light);
+}
+
+.categoria-educacion .categoria-icon {
+  color: var(--educacion-color);
+}
+
+.categoria-educacion .categoria-badge {
+  background: var(--educacion-color);
+  color: white;
+}
+
+/* Entretenimiento */
+.categoria-entretenimiento {
+  --categoria-color: var(--entretenimiento-color);
+  --categoria-light: var(--entretenimiento-light);
+}
+
+.categoria-entretenimiento .categoria-icon {
+  color: var(--entretenimiento-color);
+}
+
+.categoria-entretenimiento .categoria-badge {
+  background: var(--entretenimiento-color);
+  color: white;
+}
+
+/* ==========================================================================
+   COMPONENTES UTILITARIOS
+   ========================================================================== */
+
+/* Badges y etiquetas */
+.badge {
+  display: inline-block;
+  padding: 0.25rem 0.75rem;
+  font-size: 0.75rem;
+  font-weight: 600;
+  border-radius: 9999px;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+}
+
+.badge-primary {
+  background: var(--telegram-gradient);
+  color: white;
+}
+
+.badge-success {
+  background: var(--success-color);
+  color: white;
+}
+
+.badge-warning {
+  background: var(--warning-color);
+  color: white;
+}
+
+.badge-error {
+  background: var(--error-color);
+  color: white;
+}
+
+/* Loaders y spinners */
+.spinner {
+  width: 20px;
+  height: 20px;
+  border: 2px solid #f3f3f3;
+  border-top: 2px solid var(--telegram-blue);
+  border-radius: 50%;
+  animation: spin 1s linear infinite;
+}
+
+@keyframes spin {
+  0% { transform: rotate(0deg); }
+  100% { transform: rotate(360deg); }
+}
+
+/* Tooltips */
+.tooltip {
+  position: relative;
+  cursor: pointer;
+}
+
+.tooltip::after {
+  content: attr(data-tooltip);
+  position: absolute;
+  bottom: 100%;
+  left: 50%;
+  transform: translateX(-50%);
+  background: rgba(0, 0, 0, 0.8);
+  color: white;
+  padding: 0.5rem 1rem;
+  border-radius: 4px;
+  font-size: 0.875rem;
+  white-space: nowrap;
+  opacity: 0;
+  visibility: hidden;
+  transition: opacity var(--transition-fast), visibility var(--transition-fast);
+  z-index: var(--z-tooltip);
+}
+
+.tooltip:hover::after {
+  opacity: 1;
+  visibility: visible;
+}
+
+/* ==========================================================================
+   UTILIDADES RESPONSIVE
+   ========================================================================== */
+
+/* Visibilidad responsive */
+.hidden-mobile {
+  display: none;
+}
+
+.hidden-tablet {
+  display: block;
+}
+
+.hidden-desktop {
+  display: block;
+}
+
+@media (min-width: 768px) {
+  .hidden-mobile {
+    display: block;
+  }
+  
+  .hidden-tablet {
+    display: none;
+  }
+  
+  .show-tablet {
+    display: block;
+  }
+}
+
+@media (min-width: 1024px) {
+  .hidden-desktop {
+    display: none;
+  }
+  
+  .show-desktop {
+    display: block;
+  }
+}
+
+/* Grid responsive utilities */
+.grid-auto-fit {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 1.5rem;
+}
+
+.grid-auto-fill {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+  gap: 1rem;
+}
+
+/* ==========================================================================
+   ESTADO DE GRUPOS
+   ========================================================================== */
+
+.estado-activo {
+  color: var(--success-color);
+}
+
+.estado-inactivo {
+  color: var(--error-color);
+}
+
+.estado-pendiente {
+  color: var(--warning-color);
+}
+
+/* ==========================================================================
+   ACCESIBILIDAD
+   ========================================================================== */
+
+/* Focus states */
+.focus-visible {
+  outline: 2px solid var(--telegram-blue);
+  outline-offset: 2px;
+}
+
+/* Reduce motion for accessibility */
+@media (prefers-reduced-motion: reduce) {
+  * {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+  }
+}
+
+/* Screen reader only */
+.sr-only {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  margin: -1px;
+  overflow: hidden;
+  clip: rect(0, 0, 0, 0);
+  white-space: nowrap;
+  border: 0;
+}

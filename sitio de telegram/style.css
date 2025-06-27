@@ -1,0 +1,100 @@
+/*
+Theme Name: Telegram Groups Directory
+Description: Tema profesional para directorio de grupos de Telegram con ACF Pro
+Version: 1.0.0
+Author: Tu Nombre
+Text Domain: telegram-groups
+*/
+
+/* Variables CSS para colores de Telegram */
+:root {
+    --telegram-blue: #0088cc;
+    --telegram-light-blue: #229ED9;
+    --telegram-bg: #f4f4f5;
+    --telegram-white: #ffffff;
+    --telegram-dark: #2c3e50;
+    --telegram-gray: #95a5a6;
+    --telegram-success: #27ae60;
+    --telegram-warning: #f39c12;
+    --telegram-danger: #e74c3c;
+}
+
+/* Reset y base */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+    line-height: 1.6;
+    color: var(--telegram-dark);
+    background-color: var(--telegram-bg);
+}
+
+/* Contenedor principal */
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 20px;
+}
+
+/* Botones globales */
+.btn-telegram {
+    background: linear-gradient(135deg, var(--telegram-blue), var(--telegram-light-blue));
+    color: var(--telegram-white);
+    padding: 12px 24px;
+    border: none;
+    border-radius: 25px;
+    text-decoration: none;
+    font-weight: 600;
+    transition: all 0.3s ease;
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    cursor: pointer;
+}
+
+.btn-telegram:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 4px 15px rgba(0, 136, 204, 0.3);
+    color: var(--telegram-white);
+    text-decoration: none;
+}
+
+/* Responsive grid system */
+.grid {
+    display: grid;
+    gap: 20px;
+}
+
+.grid-4 {
+    grid-template-columns: repeat(4, 1fr);
+}
+
+.grid-3 {
+    grid-template-columns: repeat(3, 1fr);
+}
+
+.grid-2 {
+    grid-template-columns: repeat(2, 1fr);
+}
+
+@media (max-width: 768px) {
+    .grid-4,
+    .grid-3,
+    .grid-2 {
+        grid-template-columns: 1fr;
+    }
+}
+
+/* Utility classes */
+.text-center { text-align: center; }
+.text-left { text-align: left; }
+.text-right { text-align: right; }
+.mb-4 { margin-bottom: 2rem; }
+.mb-2 { margin-bottom: 1rem; }
+.mt-4 { margin-top: 2rem; }
+.py-4 { padding: 2rem 0; }
+.px-4 { padding: 0 2rem; }

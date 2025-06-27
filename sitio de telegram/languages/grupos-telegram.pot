@@ -1,0 +1,242 @@
+# Copyright (C) 2024 Grupos Telegram Theme
+# This file is distributed under the same license as the Grupos Telegram Theme package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: Grupos Telegram Theme 1.0.0\n"
+"Report-Msgid-Bugs-To: https://wordpress.org/support/theme/grupos-telegram\n"
+"POT-Creation-Date: 2024-01-01 12:00+0000\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"Language: \n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"X-Generator: WordPress\n"
+
+# Título del tema
+msgid "Grupos Telegram"
+msgstr ""
+
+# Descripción del tema
+msgid "Tema WordPress para directorio de grupos de Telegram con diseño moderno y responsive"
+msgstr ""
+
+# Navegación principal
+msgid "Inicio"
+msgstr ""
+
+msgid "Categorías"
+msgstr ""
+
+msgid "Grupos"
+msgstr ""
+
+msgid "Promocionar"
+msgstr ""
+
+msgid "Añadir Grupo"
+msgstr ""
+
+# Hero Section
+msgid "La Mayor Comunidad de Grupos de Telegram"
+msgstr ""
+
+msgid "Bienvenido a la mayor comunidad de %s organizados por aficiones, temáticas, categorías e intereses."
+msgstr ""
+
+msgid "Grupos de Telegram"
+msgstr ""
+
+msgid "Únete al grupo de chat que más te guste. Y si no existe... ¡créalo!"
+msgstr ""
+
+msgid "Buscar grupos por tema, ciudad, interés..."
+msgstr ""
+
+# Estadísticas
+msgid "Grupos Activos"
+msgstr ""
+
+msgid "Miembros Totales"
+msgstr ""
+
+msgid "Categorías"
+msgstr ""
+
+# Categorías de grupos
+msgid "Gaming"
+msgstr ""
+
+msgid "Música"
+msgstr ""
+
+msgid "Tecnología"
+msgstr ""
+
+msgid "Deportes"
+msgstr ""
+
+msgid "Educación"
+msgstr ""
+
+msgid "Entretenimiento"
+msgstr ""
+
+# Acciones de grupos
+msgid "Unirse al Grupo"
+msgstr ""
+
+msgid "Ver Más"
+msgstr ""
+
+msgid "Ver Detalles"
+msgstr ""
+
+msgid "%s miembros"
+msgstr ""
+
+msgid "Activo"
+msgstr ""
+
+msgid "Inactivo"
+msgstr ""
+
+# Sección de promoción
+msgid "¿Tienes un Grupo de Telegram?"
+msgstr ""
+
+msgid "Promociona tu grupo de Telegram y consigue %s gratis."
+msgstr ""
+
+msgid "cientos de miembros"
+msgstr ""
+
+msgid "Promoción Gratuita"
+msgstr ""
+
+msgid "Miles de Usuarios"
+msgstr ""
+
+msgid "Crecimiento Rápido"
+msgstr ""
+
+msgid "Promocionar Mi Grupo"
+msgstr ""
+
+msgid "Más Información"
+msgstr ""
+
+# Búsqueda
+msgid "Buscar"
+msgstr ""
+
+msgid "No se encontraron grupos"
+msgstr ""
+
+msgid "Intenta cambiar los filtros de búsqueda o explora otras categorías."
+msgstr ""
+
+msgid "Buscar grupos, categorías..."
+msgstr ""
+
+# Página 404
+msgid "¡Oops! Página no encontrada"
+msgstr ""
+
+msgid "Parece que el grupo que buscas se ha perdido en el ciberespacio."
+msgstr ""
+
+msgid "Ir al Inicio"
+msgstr ""
+
+msgid "Ver Todos los Grupos"
+msgstr ""
+
+msgid "Volver Atrás"
+msgstr ""
+
+# Footer
+msgid "Categorías Populares"
+msgstr ""
+
+msgid "Enlaces Útiles"
+msgstr ""
+
+msgid "Información Legal"
+msgstr ""
+
+msgid "Términos de uso"
+msgstr ""
+
+msgid "Política de privacidad"
+msgstr ""
+
+msgid "Contacto"
+msgstr ""
+
+msgid "Todos los derechos reservados."
+msgstr ""
+
+# Sidebar
+msgid "Grupos Destacados"
+msgstr ""
+
+msgid "Estadísticas del Sitio"
+msgstr ""
+
+msgid "Mantente Actualizado"
+msgstr ""
+
+# Formularios
+msgid "Tu email..."
+msgstr ""
+
+msgid "Suscribirse"
+msgstr ""
+
+msgid "No spam. Cancela cuando quieras."
+msgstr ""
+
+# Paginación
+msgid "Anterior"
+msgstr ""
+
+msgid "Siguiente"
+msgstr ""
+
+msgid "Página %s"
+msgstr ""
+
+# Ordenamiento
+msgid "Más recientes"
+msgstr ""
+
+msgid "Más miembros"
+msgstr ""
+
+msgid "Alfabético"
+msgstr ""
+
+# Estados y filtros
+msgid "Todas las categorías"
+msgstr ""
+
+msgid "Todos los estados"
+msgstr ""
+
+msgid "Solo activos"
+msgstr ""
+
+# Información sobre Telegram
+msgid "¿Qué son los Grupos de Telegram?"
+msgstr ""
+
+msgid "Los %s son salas de chat en la aplicación Telegram."
+msgstr ""
+
+msgid "grupos de Telegram"
+msgstr ""
